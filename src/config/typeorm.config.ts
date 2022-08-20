@@ -17,8 +17,23 @@ export const typeOrmAsyncConfig: TypeOrmModuleAsyncOptions = {
       password: process.env.DATABASE_PASSWORD,
       entities: ['dist/movies/entities/*.js'],
       migrations: ['dist/migrations/*.js'],
-      synchronize: true,
+      synchronize: false,
       logging: true,
     };
   },
+};
+
+export const typeOrmConfig: TypeOrmModuleOptions = {
+  type: 'postgres',
+  host: process.env.DB_HOST,
+  port: parseInt(process.env.DB_PORT, 10),
+  username: process.env.DB_USERNAME,
+  database: process.env.DB_NAME,
+  password: process.env.DB_PASSWORD,
+  entities: ['dist/**/*.entity.js'],
+  migrations: ['dist/migrations/**/*.js'],
+  extra: {
+    charset: 'utf8mb4_unicode_ci',
+  },
+  logging: true,
 };
