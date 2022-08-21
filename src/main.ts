@@ -10,7 +10,17 @@ async function bootstrap() {
     .setTitle('StartApp API')
     .setDescription('Movies API')
     .setVersion('1.0')
-    .addTag('')
+    .addBearerAuth(
+      {
+        description: '',
+        name: 'Authorization',
+        bearerFormat: 'Bearer',
+        scheme: 'Bearer',
+        type: 'http',
+        in: 'Header',
+      },
+      'access-token',
+    )
     .build();
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('api/docs', app, document);
