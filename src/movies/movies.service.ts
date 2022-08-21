@@ -42,14 +42,26 @@ export class MoviesService {
     return this.movieRepository.findOneBy({ id });
   }
 
+  async findByTitle(title: string): Promise<Movie | any> {
+    return this.movieRepository.find({ where: { title: title } });
+  }
+
+  async findByGender(gender: string): Promise<void> {
+    const genderMovie = await this.movieRepository.findOne({
+      where: { gender: gender },
+    });
+  }
+
   async update(id: number, updateMovieDto: UpdateMovieDto) {
     const movie = await this.movieRepository.preload({
       id: id,
       ...updateMovieDto,
     });
+    console.log(movie);
     if (!movie) {
       throw new NotFoundException(`Movie #${id} not found`);
     }
+
     return this.movieRepository.save(movie);
   }
 
