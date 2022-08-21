@@ -5,10 +5,10 @@ export class Movie {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column()
+  @Column('varchar')
   title: string;
 
-  @Column()
+  @Column('varchar')
   gender: string;
 
   @Column()
