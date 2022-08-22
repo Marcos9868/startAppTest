@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common';
 
 @Injectable()
 export class UsersService {
-  private readonly users = [
+  private readonly User = [
     {
       userId: 1,
       username: process.env.USERSERVICE_USERNAME,
@@ -11,6 +11,6 @@ export class UsersService {
   ];
 
   async findOne(username: string): Promise<any> {
-    return this.users.find((user) => user.username === username);
+    return this.User.find((user) => user.username === username);
   }
 }
