@@ -6,7 +6,7 @@ const NavBar = () => {
   return (
     <Nav>
       <Logo>
-        <Link to='/movies'><BiCameraMovie /> StartApp Movies</Link>
+        <Link to='/'><BiCameraMovie /> StartApp Movies</Link>
       </Logo>
       <Form>
         <Input type="text" placeholder='Buscar filme' />
