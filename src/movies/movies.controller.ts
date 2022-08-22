@@ -38,18 +38,6 @@ export class MoviesController {
     return this.moviesService.findOneById(+id);
   }
 
-  @Get(':title')
-  findOneBy(@Param('title') title: string) {
-    console.log(title);
-    return this.moviesService.findOneByTitle(title);
-  }
-
-  @Get(':gender')
-  findOneBY(@Param('gender') gender: string) {
-    console.log(gender);
-    return this.moviesService.findOneByGender(gender);
-  }
-
   @ApiBearerAuth('access-token')
   @UseGuards(JwtAuthGuard)
   @Patch(':id')
