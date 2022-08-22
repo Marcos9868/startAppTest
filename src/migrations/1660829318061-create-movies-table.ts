@@ -13,14 +13,6 @@ export class CreateMoviesTable1660829318061 implements MigrationInterface {
             generationStrategy: 'increment',
           },
           {
-            name: 'imageTitle',
-            type: 'varchar',
-          },
-          {
-            name: 'imageCover',
-            type: 'varchar',
-          },
-          {
             name: 'title',
             type: 'varchar',
           },
@@ -30,11 +22,11 @@ export class CreateMoviesTable1660829318061 implements MigrationInterface {
           },
           {
             name: 'release',
-            type: 'varchar',
+            type: 'int',
           },
           {
             name: 'imdb',
-            type: 'varchar',
+            type: 'float',
           },
         ],
       }),
