@@ -7,7 +7,11 @@ Selection test for startapp company. The project is a movie API with login syste
 ## Installation
 
 ```bash
+# NPM
 $ npm install
+
+# Yarn
+$ yarn install
 ```
 
 ## Running the app
@@ -23,22 +27,26 @@ $ npm run start:dev
 $ npm run start:prod
 ```
 
-## Test
+## How to use:
+
+- First, contact the project author to request the archive of the environment variables. 
+- Insert the file at the root of the application. 
+- Because the database used was local, replace the values set in the.env file with yours.
+- Run the application
+
+## Address of docs:
 
 ```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
+$ http://localhost:3333/api/docs
 ```
 
 ## Database:
 
 - PostgreSQL
+
+## Docs:
+
+- Swagger
 
 ## Stay in touch
 
