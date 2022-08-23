@@ -10,7 +10,7 @@ import {
   paginate,
   Pagination,
 } from 'nestjs-typeorm-paginate';
-import { getRepository, Repository } from 'typeorm';
+import { Repository } from 'typeorm';
 import { CreateMovieDto } from './dto/create-movie.dto';
 import { UpdateMovieDto } from './dto/update-movie.dto';
 import { Movie } from './entities/movie.entity';
@@ -41,13 +41,9 @@ export class MoviesService {
 
   async findAll(options: IPaginationOptions): Promise<Pagination<Movie>> {
     const queryBuilder = this.movieRepository.createQueryBuilder('m');
-    queryBuilder.select(['m.id', 'm.title', 'm.gender', 'm.release', 'm.imdb']);
+    queryBuilder.select(['*']);
     queryBuilder.orderBy('m.id', 'ASC');
     return paginate<Movie>(this.movieRepository, options);
-  }
-
-  async findOneById(id: number): Promise<Movie> {
-    return this.movieRepository.findOneBy({ id });
   }
 
   async update(id: number, updateMovieDto: UpdateMovieDto) {
