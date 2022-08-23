@@ -1,4 +1,4 @@
-import { Table, Tr, Td, MovieBox, Img } from './styles';
+import { Img, Movie, RenderMovie } from './styles';
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 import { IMovies } from 'src/interfaces/IMovies';
@@ -51,29 +51,25 @@ const Movies = () => {
       .catch((err) => console.log(err));
   }
 
-  useEffect(() => {}, []);
+  useEffect(() => {
+    getAllMovies()
+  }, []);
 
   console.log(movies);
 
   return (
-    <Table>
-      <thead>
-        <tr>
-          {Object.keys(movieMock[0]).map((item) => (
-            <th>{item}</th>
-          ))}
-        </tr>
-      </thead>
-      <tbody>
-        {movieMock.map((movie) => (
-          <tr key={movie.id}>
-            {Object.values(movie).map((item, index) => (
-              <td key={index}>{item}</td>
-            ))}
-          </tr>
-        ))}
-      </tbody>
-    </Table>
+    <Movie>
+      {movies.length === 0 && <h1>Nothing to show yet :(</h1>}
+      {movies.map((item) => (
+        <RenderMovie>
+          <h3>{item.title}</h3>
+          <Img alt='No Image'/>
+          <h4>{item.gender}</h4>
+          <h5>{item.release}</h5>
+          <h5>{item.imdb}</h5>
+        </RenderMovie>
+      ))}
+    </Movie>
   );
 };
 
@@ -98,3 +94,22 @@ export default Movies;
               <h5>{movie.release}</h5>
               <h5>{movie.imdb}</h5> */
 }
+
+{/* <Table>
+      <THead>
+        <TrFirst>
+          {Object.keys(movieMock[0]).map((item) => (
+            <th>{item}</th>
+          ))}
+        </TrFirst>
+      </THead>
+      <tbody>
+        {movieMock.map((movie) => (
+          <tr key={movie.id}>
+            {Object.values(movie).map((item, index) => (
+              <td key={index}>{item}</td>
+            ))}
+          </tr>
+        ))}
+      </tbody>
+    </Table> */}

@@ -6,13 +6,12 @@ export const Footer = styled.footer`
   height: 70px;
   margin: auto;
   bottom: 0;
-  position: fixed;
+  position: relative;
 `;
 
 export const Author = styled.p`
   color: rgb(255, 208, 0);
   display: flex;
   justify-content: center;
-  align-itens: center;
-  margin-top: 25px;
+  padding-top: 25px;
 `;

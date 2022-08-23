@@ -30,10 +30,6 @@ export const Input = styled.input`
   border: none;
   padding-left: 7px;
   outline: none;
-  &:hover {
-    background-color: darkgolden;
-    transition: 150ms;
-  }
 `
 
 export const SearchButton = styled.button`
@@ -44,4 +40,8 @@ export const SearchButton = styled.button`
   border: none;
   width: 70px;
   cursor: pointer;
+  &:hover .SearchButton {
+    background-color: darkgolden;
+    transition: 150ms;
+  }
 `
