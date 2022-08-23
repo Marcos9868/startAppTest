@@ -5,6 +5,11 @@ import {
   NotFoundException,
 } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
+import {
+  IPaginationOptions,
+  paginate,
+  Pagination,
+} from 'nestjs-typeorm-paginate';
 import { getRepository, Repository } from 'typeorm';
 import { CreateMovieDto } from './dto/create-movie.dto';
 import { UpdateMovieDto } from './dto/update-movie.dto';
@@ -34,8 +39,11 @@ export class MoviesService {
     return this.movieRepository.save(newMovie);
   }
 
-  findAll(): Promise<Movie[]> {
-    return this.movieRepository.find();
+  async findAll(options: IPaginationOptions): Promise<Pagination<Movie>> {
+    const queryBuilder = this.movieRepository.createQueryBuilder('m');
+    queryBuilder.select(['m.id', 'm.title', 'm.gender', 'm.release', 'm.imdb']);
+    queryBuilder.orderBy('m.id', 'ASC');
+    return paginate<Movie>(this.movieRepository, options);
   }
 
   async findOneById(id: number): Promise<Movie> {
