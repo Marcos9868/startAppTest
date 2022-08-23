@@ -34,6 +34,30 @@ $ npm run start:prod
 - Because the database used was local, replace the values set in the.env file with yours.
 - Run the application
 
+## Login:
+
+- When you sign in to the API, copy the following sample excerpt below:
+```bash
+{
+  "username": "admin",
+  "password": "admin"
+}
+```
+- The expected result should be the same as this:
+```bash
+{
+  "access_token": "yourTokenHere"
+}
+```
+- After you run the route, go to the route check_authorization to authorize the token that was received. 
+- Click the padlock at the top right of the route. 
+- Paste the token and click authorize. 
+- Run the route to see that we are allowed to continue in the API.
+- The expected result should be the same as this:
+```bash
+Authorized
+```
+
 ## Address of docs:
 
 ```bash
