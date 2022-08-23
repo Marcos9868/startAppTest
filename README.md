@@ -1,10 +1,10 @@
 # StartApp Movies API
 
-## Description
+## Description:
 
 Selection test for startapp company. The project is a movie API with login system.
 
-## Installation
+## Installation:
 
 ```bash
 # NPM
@@ -14,17 +14,17 @@ $ npm install
 $ yarn install
 ```
 
-## Running the app
+## Running the app:
 
 ```bash
 # development
-$ npm run start
+$ npm/yarn run start
 
 # watch mode
-$ npm run start:dev
+$ npm/yarn run start:dev
 
 # production mode
-$ npm run start:prod
+$ npm/yarn run start:prod
 ```
 
 ## How to use:
@@ -58,6 +58,12 @@ $ npm run start:prod
 Authorized
 ```
 
+## Logout:
+
+- If you want to exit the API, just click on the swagger authorize option, right at the beginning (top right).
+- Click logout. 
+- You are now outside the API and can no longer create, change, or delete data.
+
 ## Address of docs:
 
 ```bash
@@ -72,6 +78,6 @@ $ http://localhost:3333/api/docs
 
 - Swagger
 
-## Stay in touch
+## Stay in touch:
 
 - Author - [Marcos M. Ferreira](https://www.linkedin.com/in/marcos-melo-ferreira/)
