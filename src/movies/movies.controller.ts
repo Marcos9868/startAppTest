@@ -7,7 +7,6 @@ import {
   Param,
   Delete,
   UseGuards,
-  Req,
   Query,
   DefaultValuePipe,
   ParseIntPipe,
@@ -44,11 +43,6 @@ export class MoviesController {
       page,
       limit,
     });
-  }
-
-  @Get(':id')
-  findOne(@Param('id') id: number) {
-    return this.moviesService.findOneById(+id);
   }
 
   @ApiBearerAuth('access-token')
